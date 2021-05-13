@@ -8,9 +8,9 @@ spring:
       enabled: ALWAYS
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://ec2-52-0-114-209.compute-1.amazonaws.com:5432/d9hhge33hqvhar
-    username: ntrtxbftjrwbnp
-    password: d2803d010d4ce6a272de804f83b7923e4d78ccc595924909dbfeae2b70d90da9
+    url: ${DATA_BASE_URL:jdbc:postgresql://localhost:5432/demo}
+    username: ${DATA_BASE_USER:${random.value}}
+    password: ${DATA_BASE_PASSWORD:${random.value}}
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     generate-ddl: true
