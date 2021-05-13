@@ -1,0 +1,37 @@
+app:
+  description: ${app.name} is a Spring Boot application
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  output:
+    ansi:
+      enabled: ALWAYS
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://ec2-54-204-39-43.compute-1.amazonaws.com:5432/d42fi6tgo3o4fu
+    username: imruqdflpkpiux
+    password: b2ef79807992fdfa2b010b143548863fb2172a7a4a02bc5199ea1606d065a6e2
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        time_zone: ${TIME_ZONE:UTC}
+      org:
+        hibernate:
+          envers:
+            default_schema: public
+            store_data_at_delete: true
+server:
+  error:
+    include-stacktrace: never
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    loggers:
+      enabled: true
