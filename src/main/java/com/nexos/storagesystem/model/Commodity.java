@@ -23,7 +23,7 @@ import java.util.UUID;
 public class Commodity {
 
     @Id
-    public UUID uuid = null;
+    public UUID uuid = UUID.randomUUID();
 
     @Column(unique = true)
     public String name;
